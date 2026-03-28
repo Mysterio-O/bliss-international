@@ -1,4 +1,4 @@
-import Header from "@/app/components/Header";
+import Header from "@/app/components/headers/Header";
 import { Button } from "@/components/ui/button";
 
 export default function Home() {
@@ -6,7 +6,7 @@ export default function Home() {
     <div className="flex min-h-screen flex-col bg-background text-foreground">
       <Header />
 
-      <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-8 px-4 py-8 sm:px-6 lg:px-8">
+      <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-8 px-4 py-8 pb-32 sm:px-6 sm:pb-10 lg:px-8">
         <section className="overflow-hidden rounded-3xl border border-border bg-card">
           <div className="bg-[radial-gradient(circle_at_20%_20%,var(--primary),transparent_40%),radial-gradient(circle_at_80%_20%,var(--secondary),transparent_45%),radial-gradient(circle_at_40%_80%,var(--accent),transparent_48%)] p-6 sm:p-8">
             <p className="mb-2 text-xs font-medium uppercase tracking-[0.16em] text-primary-foreground/80">
