@@ -1,6 +1,9 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+@import "swiper/css";
+@import "swiper/css/effect-fade";
+@import "swiper/css/pagination";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -138,5 +141,45 @@
   }
   html {
     @apply font-sans;
+  }
+}
+
+.banner-swiper {
+  --swiper-pagination-bottom: 1.05rem;
+  --swiper-pagination-bullet-inactive-opacity: 1;
+}
+
+.banner-swiper .swiper-pagination {
+  left: 1.25rem;
+  right: auto;
+  width: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  z-index: 18;
+}
+
+.banner-swiper .banner-pagination-bullet {
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.58);
+  opacity: 1;
+  transform: scale(1);
+  transition: transform 220ms ease, background-color 220ms ease;
+}
+
+.banner-swiper .banner-pagination-bullet.banner-pagination-bullet-active {
+  background: color-mix(in oklab, var(--primary) 82%, white 18%);
+  transform: scale(1.14);
+}
+
+.dark .banner-swiper .banner-pagination-bullet {
+  background: rgba(255, 255, 255, 0.46);
+}
+
+@media (max-width: 767px) {
+  .banner-swiper .swiper-pagination {
+    display: none;
   }
 }

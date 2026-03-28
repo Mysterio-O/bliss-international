@@ -17,7 +17,22 @@ export default function Header() {
         <div className="mx-auto w-full max-w-screen-2xl px-4">
           <nav className="py-2 lg:flex items-center justify-around" aria-label="Desktop navigation">
           <Link href="/" className="inline-flex items-center rounded-xl p-1" aria-label="Bliss International Academy Home">
-            <Image src="/logo.png" alt="Bliss International Academy" width={190} height={60} priority className="h-10 w-auto object-contain lg:h-11" />
+            <Image
+              src="/logo.webp"
+              alt="Bliss International Academy"
+              width={190}
+              height={60}
+              priority
+              className="h-10 w-auto object-contain dark:hidden lg:h-11"
+            />
+            <Image
+              src="/logo-dark.webp"
+              alt="Bliss International Academy"
+              width={190}
+              height={60}
+              priority
+              className="hidden h-10 w-auto object-contain dark:block lg:h-11"
+            />
           </Link>
           <div className="flex items-start gap-2">
             {navGroups.map((group, groupIndex) => (
