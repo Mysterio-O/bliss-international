@@ -1,10 +1,7 @@
-import React from 'react';
 import LatestUpdateHeading from './LatestUpdateHeading';
 import LatestUpdatesAccordion from './LatestUpdatesAccordion';
 
 export default function LatestUpdates() {
-
-
 
     return (
         <section

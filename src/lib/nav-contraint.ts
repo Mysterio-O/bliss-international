@@ -7,7 +7,7 @@ export type NavNode = {
 export const navItems: NavNode[] = [
   {
     label: "About BIA",
-    href: "#about-bia",
+    href: "about-bia",
     children: [
       { label: "About BIA", href: "#about-bia-overview" },
       { label: "Message From Chairman", href: "#message-chairman" },

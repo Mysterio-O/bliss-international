@@ -1,8 +1,8 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import React from 'react'
-import { latestUpdatesMetadata } from './latestUpdates'
 import { Button } from '@/components/ui/button'
 import { Download } from 'lucide-react'
+import { latestUpdatesMetadata } from './latest-updates'
 
 export default function LatestUpdatesAccordion() {
 

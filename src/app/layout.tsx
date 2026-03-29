@@ -4,8 +4,10 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import MobileBottomNav from "@/app/components/headers/MobileBottomNav";
+import Header from "./components/headers/Header";
+import { Footer } from "./components/footer/Footer";
 
-const figtree = Figtree({subsets:['latin'],variable:'--font-sans'});
+const figtree = Figtree({ subsets: ['latin'], variable: '--font-sans' });
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,8 +37,13 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+
+          <Header />
+
           {children}
           <MobileBottomNav />
+
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
