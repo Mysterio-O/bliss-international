@@ -26,7 +26,7 @@ export function ProgramSheet({ program, open, onOpenChange }: ProgramSheetProps)
     const Icon = program.icon;
 
     return (
-        <Sheet open={open} onOpenChange={onOpenChange}>
+        <Sheet open={open} onOpenChange={onOpenChange} modal={false}>
             <SheetContent
                 side={side}
                 className={[

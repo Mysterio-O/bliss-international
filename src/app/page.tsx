@@ -1,6 +1,8 @@
 import Header from "@/app/components/headers/Header";
 import { BannerCarousel } from "@/app/components/banner/BannerCarousel";
 import { ProgramsSection } from "./components/programs/ProgramSection";
+import { PastEventsSection } from "./components/pasteventssection/Pasteventssection";
+import { TestimonialsSection } from "./components/testimonial-section/TestimonialsSection";
 
 export default function Home() {
   return (
@@ -13,6 +15,12 @@ export default function Home() {
         </section>
         <section className="-mx-4 sm:-mx-6 lg:-mx-8">
           <ProgramsSection />
+        </section>
+        <section className="-mx-4 sm:-mx-6 lg:-mx-8">
+          <PastEventsSection />
+        </section>
+        <section className="-mx-4 sm:-mx-6 lg:-mx-8">
+          <TestimonialsSection />
         </section>
 
         <section className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
