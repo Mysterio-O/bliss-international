@@ -213,3 +213,30 @@
 .animate-marquee-right {
   animation: marquee-right linear infinite;
 }
+
+
+/* For Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 6px;
+  /* thin */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #b7d85c;
+  border-radius: 9999px;
+}
+
+/* Optional hover effect */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a3c94f;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #b7d85c transparent;
+}
