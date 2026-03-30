@@ -134,7 +134,6 @@ export default function MobileBottomNav() {
     if (href.startsWith("#")) {
       return hash === href;
     }
-
     return pathname === href;
   };
 
@@ -142,7 +141,6 @@ export default function MobileBottomNav() {
     if (isItemActive(item.href)) {
       return true;
     }
-
     return Boolean(item.children?.some((child) => isBranchActive(child)));
   };
 
@@ -159,7 +157,7 @@ export default function MobileBottomNav() {
   };
 
   const popupPanelClass =
-    "absolute right-2 bottom-full left-2 z-50 mb-2 overflow-hidden rounded-2xl border border-primary/20 bg-[#eef4fb] p-2 shadow-[0_24px_56px_rgba(0,0,0,0.28)] dark:border-white/15 dark:bg-[#0b1a2b]";
+    "absolute right-0 bottom-full left-0 z-50 mb-2 overflow-hidden rounded-2xl border border-primary/20 bg-[#eef4fb] p-2 shadow-[0_24px_56px_rgba(0,0,0,0.28)] dark:border-white/15 dark:bg-[#0b1a2b]";
 
   const renderSubtree = (nodes: NavNode[], depth = 0): ReactNode => {
     return nodes.map((node) => {
@@ -197,9 +195,16 @@ export default function MobileBottomNav() {
       className="pointer-events-none fixed inset-x-0 bottom-[max(0.65rem,env(safe-area-inset-bottom))] z-50 flex justify-center px-4"
       aria-label="Primary mobile navigation"
     >
-      <div className="pointer-events-auto relative z-50 w-full max-w-md overflow-visible rounded-[1.6rem] border border-border/70 bg-background/60 p-1 shadow-[0_12px_40px_rgba(0,0,0,0.22)] backdrop-blur-2xl supports-backdrop-filter:bg-background/50">
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.2),rgba(255,255,255,0.02))] dark:bg-[linear-gradient(180deg,rgba(255,255,255,0.12),rgba(255,255,255,0.02))]" />
+      {/* Outer wrapper: overflow-visible so the panel pops above without clipping */}
+      <div className="pointer-events-auto relative z-50 w-full max-w-md overflow-visible">
 
+        {/* ── Backdrop blur layer — isolated BEHIND everything so it never clips children ── */}
+        <div className="pointer-events-none absolute inset-0 rounded-[1.6rem] border border-border/70 bg-background/60 shadow-[0_12px_40px_rgba(0,0,0,0.22)] backdrop-blur-2xl supports-backdrop-filter:bg-background/50" />
+
+        {/* ── Gloss gradient — also isolated, sits just above blur layer ── */}
+        <div className="pointer-events-none absolute inset-0 rounded-[1.6rem] bg-[linear-gradient(180deg,rgba(255,255,255,0.2),rgba(255,255,255,0.02))] dark:bg-[linear-gradient(180deg,rgba(255,255,255,0.12),rgba(255,255,255,0.02))]" />
+
+        {/* ── Popup panels — siblings of the blur layer, rendered above it ── */}
         {panel.type === "more" ? (
           <div className={popupPanelClass}>
             <div aria-hidden="true" className="pointer-events-none absolute inset-0">
@@ -303,7 +308,8 @@ export default function MobileBottomNav() {
           </div>
         ) : null}
 
-        <div className="relative grid grid-cols-5 gap-1">
+        {/* ── Nav buttons — rendered above blur/gloss layers via relative positioning ── */}
+        <div className="relative grid grid-cols-5 gap-1 p-1">
           {primaryItems.map((item, index) => {
             const isActive =
               panel.type === "subnav" && panel.item.label === item.label ? true : isBranchActive(item.node);
