@@ -1,26 +1,242 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "swiper/css";
+@import "swiper/css/effect-fade";
+@import "swiper/css/pagination";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-sans);
   --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-sans);
+  --color-role-admin: var(--role-admin);
+  --color-role-teacher: var(--role-teacher);
+  --color-role-student: var(--role-student);
+  --color-role-parent: var(--role-parent);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --background: #f7fafc;
+  --foreground: #0b1c2e;
+  --card: #ffffff;
+  --card-foreground: #0b1c2e;
+  --popover: #ffffff;
+  --popover-foreground: #0b1c2e;
+  --primary: #2b5c88;
+  --primary-foreground: #f7fafc;
+  --secondary: #a3cb3f;
+  --secondary-foreground: #15200f;
+  --muted: #e8eef4;
+  --muted-foreground: #536171;
+  --accent: #f5a623;
+  --accent-foreground: #231503;
+  --destructive: #be3b32;
+  --border: #d7e1ea;
+  --input: #d0dbe6;
+  --ring: #5e8fbc;
+  --chart-1: #2b5c88;
+  --chart-2: #2e8a72;
+  --chart-3: #8fbe3f;
+  --chart-4: #d9921e;
+  --chart-5: #f5a623;
+  --role-admin: #2b5c88;
+  --role-teacher: #2e8a72;
+  --role-student: #8fbe3f;
+  --role-parent: #d9921e;
+  --radius: 0.625rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #10263a;
+  --sidebar-primary: #2b5c88;
+  --sidebar-primary-foreground: #f7fafc;
+  --sidebar-accent: #e8eef4;
+  --sidebar-accent-foreground: #10263a;
+  --sidebar-border: #d7e1ea;
+  --sidebar-ring: #5e8fbc;
+}
+
+.dark {
+  --background: #08121e;
+  --foreground: #eaf2fb;
+  --card: #102235;
+  --card-foreground: #eaf2fb;
+  --popover: #102235;
+  --popover-foreground: #eaf2fb;
+  --primary: #5e8fbc;
+  --primary-foreground: #08121e;
+  --secondary: #b7d85c;
+  --secondary-foreground: #14200d;
+  --muted: #13273b;
+  --muted-foreground: #a6b9cf;
+  --accent: #ffbc52;
+  --accent-foreground: #271500;
+  --destructive: #e36e66;
+  --border: #2b4258;
+  --input: #1b344a;
+  --ring: #7aabd6;
+  --chart-1: #5e8fbc;
+  --chart-2: #2e8a72;
+  --chart-3: #8fbe3f;
+  --chart-4: #d9921e;
+  --chart-5: #ffbc52;
+  --role-admin: #2b5c88;
+  --role-teacher: #2e8a72;
+  --role-student: #8fbe3f;
+  --role-parent: #d9921e;
+  --sidebar: #102235;
+  --sidebar-foreground: #eaf2fb;
+  --sidebar-primary: #5e8fbc;
+  --sidebar-primary-foreground: #08121e;
+  --sidebar-accent: #193149;
+  --sidebar-accent-foreground: #eaf2fb;
+  --sidebar-border: #2b4258;
+  --sidebar-ring: #7aabd6;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  html {
+    @apply font-sans;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.banner-swiper {
+  --swiper-pagination-bottom: 1.05rem;
+  --swiper-pagination-bullet-inactive-opacity: 1;
+}
+
+.banner-swiper .swiper-pagination {
+  left: 1.25rem;
+  right: auto;
+  width: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  z-index: 18;
+}
+
+.banner-swiper .banner-pagination-bullet {
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.58);
+  opacity: 1;
+  transform: scale(1);
+  transition: transform 220ms ease, background-color 220ms ease;
+}
+
+.banner-swiper .banner-pagination-bullet.banner-pagination-bullet-active {
+  background: color-mix(in oklab, var(--primary) 82%, white 18%);
+  transform: scale(1.14);
+}
+
+.dark .banner-swiper .banner-pagination-bullet {
+  background: rgba(255, 255, 255, 0.46);
+}
+
+@media (max-width: 767px) {
+  .banner-swiper .swiper-pagination {
+    display: none;
+  }
+}
+
+@keyframes marquee-left {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-marquee-left {
+  animation: marquee-left linear infinite;
+}
+
+.animate-marquee-right {
+  animation: marquee-right linear infinite;
+}
+
+
+/* For Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 6px;
+  /* thin */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #b7d85c;
+  border-radius: 9999px;
+}
+
+/* Optional hover effect */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a3c94f;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #b7d85c transparent;
 }
