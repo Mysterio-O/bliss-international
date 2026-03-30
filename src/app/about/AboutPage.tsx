@@ -8,7 +8,6 @@ import IntroductionSection from "../components/about/strip/IntroductionSection";
 import StatsSection from "../components/about/strip/StatsSection";
 import MissionVisionSection from "../components/about/strip/MissionVisionSection";
 import WhyChooseSection from "../components/about/strip/WhyChooseSection";
-import ChairmanMessageSection from "../components/about/strip/ChairmanMessageSection";
 import LeadershipMessages from "../components/about/strip/LeadershipMessages";
 
 

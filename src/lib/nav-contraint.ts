@@ -10,15 +10,13 @@ export const navItems: NavNode[] = [
     href: "/about",
     children: [
       { label: "About BIA", href: "/about" },
-      { label: "Message From Chairman", href: "#message-chairman" },
-      { label: "Message From Academic Chief", href: "#message-academic-chief" },
       {
         label: "Message From Principal",
-        href: "#message-principal",
-        children: [
-          { label: "Satkhira Campus", href: "#message-principal-satkhira" },
-          { label: "Debhata Campus", href: "#message-principal-debhata" },
-        ],
+        href: "/about/principles",
+        // children: [
+        //   { label: "Satkhira Campus", href: "#message-principal-satkhira" },
+        //   { label: "Debhata Campus", href: "#message-principal-debhata" },
+        // ],
       },
       {
         label: "Faculties",
