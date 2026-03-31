@@ -20,11 +20,7 @@ export const navItems: NavNode[] = [
       },
       {
         label: "Faculties",
-        href: "#faculties",
-        children: [
-          { label: "Satkhira Campus", href: "#faculties-satkhira" },
-          { label: "Debhata Campus", href: "#faculties-debhata" },
-        ],
+        href: "/about/faculties",
       },
     ],
   },
