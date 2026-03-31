@@ -43,13 +43,13 @@ export default function Header() {
                 <ul className="flex items-center gap-1">
                   {group.map((item) => (
                     <li key={item.label} className="group/item relative">
-                      <Link
-                        href={item.href}
+                      <span
+                        // href={item.href}
                         className="inline-flex items-center gap-1 rounded-xl px-3 py-2 text-sm font-medium text-foreground/85 transition-[background-color,color,box-shadow] duration-200 hover:bg-white/70 hover:text-foreground hover:shadow-[0_0_0_1px_rgba(43,92,136,0.14),0_6px_16px_rgba(43,92,136,0.12)] dark:hover:bg-white/10 dark:hover:shadow-[0_0_0_1px_rgba(122,171,214,0.22),0_8px_18px_rgba(0,0,0,0.32)]"
                       >
                         <span>{item.label}</span>
                         {item.children?.length ? <ChevronDown /> : null}
-                      </Link>
+                      </span>
 
                       {item.children?.length ? (
                         <div className="invisible absolute top-full left-0 z-50 pt-2 opacity-0 transition-all duration-150 group-hover/item:visible group-hover/item:opacity-100 group-focus-within/item:visible group-focus-within/item:opacity-100">
