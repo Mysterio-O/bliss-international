@@ -28,8 +28,8 @@ export const navItems: NavNode[] = [
     label: "Admission",
     href: "#admission",
     children: [
-      { label: "Admission Procedure", href: "#admission-procedure" },
-      { label: "Age Criteria", href: "#age-criteria" },
+      { label: "Admission Procedure", href: "/admission-procedure" },
+      { label: "Age Criteria", href: "/age-criteria" },
       {
         label: "Fees Structure",
         href: "#fees-structure",
