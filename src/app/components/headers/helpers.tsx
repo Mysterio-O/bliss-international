@@ -1,3 +1,4 @@
+'use client'
 import { NavNode } from "@/lib/nav-contraint";
 import Link from "next/link";
 
@@ -27,6 +28,7 @@ export function NestedMenu({ items }: { items: NavNode[] }) {
           <li key={item.label} className="group/sub relative">
             <Link
               href={item.href}
+              onClick={() => (document.activeElement as HTMLElement)?.blur()}
               className="flex items-center justify-between gap-3 rounded-xl px-3 py-2 text-sm text-foreground/90 transition-[background-color,color,box-shadow] duration-200 hover:bg-white/55 hover:text-foreground hover:shadow-[0_0_0_1px_rgba(43,92,136,0.14),0_6px_14px_rgba(43,92,136,0.12)] dark:hover:bg-white/10 dark:hover:shadow-[0_0_0_1px_rgba(122,171,214,0.22),0_8px_16px_rgba(0,0,0,0.28)]"
             >
               <span>{item.label}</span>

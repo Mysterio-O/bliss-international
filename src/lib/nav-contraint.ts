@@ -7,7 +7,7 @@ export type NavNode = {
 export const navItems: NavNode[] = [
   {
     label: "About BIA",
-    href: "/about",
+    href: "#",
     children: [
       { label: "About BIA", href: "/about" },
       {
@@ -20,11 +20,7 @@ export const navItems: NavNode[] = [
       },
       {
         label: "Faculties",
-        href: "#faculties",
-        children: [
-          { label: "Satkhira Campus", href: "#faculties-satkhira" },
-          { label: "Debhata Campus", href: "#faculties-debhata" },
-        ],
+        href: "/about/faculties",
       },
     ],
   },
@@ -32,24 +28,24 @@ export const navItems: NavNode[] = [
     label: "Admission",
     href: "#admission",
     children: [
-      { label: "Admission Procedure", href: "#admission-procedure" },
-      { label: "Age Criteria", href: "#age-criteria" },
+      { label: "Admission Procedure", href: "/admission-procedure" },
+      { label: "Age Criteria", href: "/age-criteria" },
       {
         label: "Fees Structure",
-        href: "#fees-structure",
-        children: [
-          { label: "Satkhira Campus", href: "#fees-satkhira" },
-          { label: "Debhata Campus", href: "#fees-debhata" },
-        ],
+        href: "/fee-structure",
+        // children: [
+        //   { label: "Satkhira Campus", href: "#fees-satkhira" },
+        //   { label: "Debhata Campus", href: "#fees-debhata" },
+        // ],
       },
       { label: "Online Admission", href: "#online-admission" },
       {
         label: "Payment Procedure",
-        href: "#payment-procedure",
-        children: [
-          { label: "Satkhira Campus", href: "#payment-satkhira" },
-          { label: "Debhata Campus", href: "#payment-debhata" },
-        ],
+        href: "/payment-procedure",
+        // children: [
+        //   { label: "Satkhira Campus", href: "#payment-satkhira" },
+        //   { label: "Debhata Campus", href: "#payment-debhata" },
+        // ],
       },
     ],
   },

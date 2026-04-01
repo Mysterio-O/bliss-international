@@ -24,6 +24,15 @@ type PanelState =
 function getNavIcon(label: string) {
   const normalized = label.toLowerCase();
 
+  if (normalized.includes("home")) {
+    return (
+      <svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth="1.8">
+        <path d="m4 11 8-7 8 7" />
+        <path d="M7 10.5V20h10v-9.5" />
+      </svg>
+    );
+  }
+
   if (normalized.includes("about")) {
     return (
       <svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth="1.8">
@@ -111,7 +120,17 @@ export default function MobileBottomNav() {
     []
   );
 
-  const primaryItems = topLevelItems.slice(0, 4);
+  const homeItem: RootMobileItem = useMemo(
+    () => ({
+      node: { label: "Home", href: "/" },
+      label: "Home",
+      href: "/",
+      icon: getNavIcon("Home"),
+    }),
+    []
+  );
+
+  const primaryItems = [homeItem, ...topLevelItems.slice(0, 4)];
   const moreItems = topLevelItems.slice(4);
 
   useEffect(() => {
@@ -293,36 +312,65 @@ export default function MobileBottomNav() {
               </div>
             </div>
             <div className="relative space-y-1">
-              <Link
-                href={toMobileHref(panel.item.href)}
-                onClick={closePanel}
+              <span
                 className={cn(
                   "flex items-center rounded-lg px-3 py-2 text-xs font-medium transition-colors",
                   isItemActive(panel.item.href) ? "bg-card text-foreground" : "text-foreground/85 hover:bg-card/70"
                 )}
               >
                 {panel.item.label} Overview
-              </Link>
+              </span>
               {panel.item.node.children?.length ? <div className="space-y-1">{renderSubtree(panel.item.node.children)}</div> : null}
             </div>
           </div>
         ) : null}
 
         {/* ── Nav buttons — rendered above blur/gloss layers via relative positioning ── */}
-        <div className="relative grid grid-cols-5 gap-1 p-1">
+        <div className="relative grid grid-cols-6 gap-1 p-1">
           {primaryItems.map((item, index) => {
             const isActive =
               panel.type === "subnav" && panel.item.label === item.label ? true : isBranchActive(item.node);
             const roleAccent =
-              index === 0
-                ? "text-role-admin"
+              item.href === "/"
+                ? "text-primary"
                 : index === 1
+                ? "text-role-admin"
+                : index === 2
                   ? "text-role-teacher"
-                  : index === 2
+                  : index === 3
                     ? "text-role-student"
-                    : index === 3
+                    : index === 4
                       ? "text-role-parent"
                       : "text-accent";
+
+            const itemHref = toMobileHref(item.href);
+            const isHome = item.href === "/";
+
+            if (isHome) {
+              return (
+                <Link
+                  key={item.label}
+                  href={itemHref}
+                  onClick={closePanel}
+                  className={cn(
+                    "group flex min-h-11 flex-col items-center justify-center gap-1 rounded-[1.15rem] px-1 py-1.5 transition-all duration-200",
+                    isActive
+                      ? "bg-card/90 text-foreground shadow-[inset_0_1px_0_rgba(255,255,255,0.45)]"
+                      : "text-muted-foreground hover:bg-card/60"
+                  )}
+                >
+                  <span className={cn("transition-colors", isActive ? roleAccent : "text-muted-foreground")}>{item.icon}</span>
+                  <span className="text-[10px] font-medium tracking-wide">{item.label}</span>
+                  <span
+                    className={cn(
+                      "h-0.5 w-4 rounded-full transition-all",
+                      isActive ? "bg-primary opacity-100" : "bg-transparent opacity-0"
+                    )}
+                    aria-hidden="true"
+                  />
+                </Link>
+              );
+            }
 
             return (
               <button
