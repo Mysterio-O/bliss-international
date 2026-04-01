@@ -1,11 +1,11 @@
 "use client";
 
 import LanguageSwitcher from "@/app/components/about/principles/LanguageSwitcher";
-import AgeCriteriaSection from "@/app/components/admission/age-criteria/AgeCriteriaSection";
+import FeeStructureSection from "@/app/components/admission/fee-structure/FeeStructureSection";
 import { Language } from "@/app/types/about/types";
 import { useState } from "react";
 
-export default function AgeCriteriaPageClient() {
+export default function FeeStructurePageClient() {
     const [language, setLanguage] = useState<Language>("en");
 
     return (
@@ -15,8 +15,8 @@ export default function AgeCriteriaPageClient() {
                 <LanguageSwitcher language={language} onChange={setLanguage} />
             </div>
 
-            {/* Criteria Section */}
-            <AgeCriteriaSection language={language} />
+            {/* Fee Structure Section */}
+            <FeeStructureSection language={language} />
         </>
     );
 }

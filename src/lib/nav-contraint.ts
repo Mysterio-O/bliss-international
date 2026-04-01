@@ -32,20 +32,20 @@ export const navItems: NavNode[] = [
       { label: "Age Criteria", href: "/age-criteria" },
       {
         label: "Fees Structure",
-        href: "#fees-structure",
-        children: [
-          { label: "Satkhira Campus", href: "#fees-satkhira" },
-          { label: "Debhata Campus", href: "#fees-debhata" },
-        ],
+        href: "/fee-structure",
+        // children: [
+        //   { label: "Satkhira Campus", href: "#fees-satkhira" },
+        //   { label: "Debhata Campus", href: "#fees-debhata" },
+        // ],
       },
       { label: "Online Admission", href: "#online-admission" },
       {
         label: "Payment Procedure",
-        href: "#payment-procedure",
-        children: [
-          { label: "Satkhira Campus", href: "#payment-satkhira" },
-          { label: "Debhata Campus", href: "#payment-debhata" },
-        ],
+        href: "/payment-procedure",
+        // children: [
+        //   { label: "Satkhira Campus", href: "#payment-satkhira" },
+        //   { label: "Debhata Campus", href: "#payment-debhata" },
+        // ],
       },
     ],
   },
