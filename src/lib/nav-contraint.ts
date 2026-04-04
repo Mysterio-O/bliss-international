@@ -55,22 +55,14 @@ export const navItems: NavNode[] = [
     children: [
       {
         label: "Academic Calendar",
-        href: "#academic-calendar",
-        children: [
-          { label: "Satkhira Campus", href: "#academic-calendar-satkhira" },
-          { label: "Debhata Campus", href: "#academic-calendar-debhata" },
-        ],
+        href: "/academic-calendar",
       },
-      { label: "Curriculum", href: "#curriculum" },
-      { label: "Teaching Medium", href: "#teaching-medium" },
-      { label: "Syllabus", href: "#syllabus" },
+      { label: "Curriculum", href: "/curriculum" },
+      { label: "Teaching Medium", href: "/teaching-medium" },
+      { label: "Syllabus", href: "/syllabus" },
       {
         label: "Forms & Downloads",
-        href: "#forms-downloads",
-        children: [
-          { label: "Satkhira Campus", href: "#forms-satkhira" },
-          { label: "Debhata Campus", href: "#forms-debhata" },
-        ],
+        href: "/forms-downloads",
       },
     ],
   },
@@ -78,13 +70,13 @@ export const navItems: NavNode[] = [
     label: "Bliss Club",
     href: "#bliss-club",
     children: [
-      { label: "Language Club", href: "#language-club" },
-      { label: "Debating Club", href: "#debating-club" },
-      { label: "Science Club", href: "#science-club" },
-      { label: "Art Club", href: "#art-club" },
-      { label: "Cultural Club", href: "#cultural-club" },
-      { label: "Sports Club", href: "#sports-club" },
-      { label: "ICT Club", href: "#ict-club" },
+      { label: "Language Club", href: "/bliss-club/language-club" },
+      { label: "Debating Club", href: "/bliss-club/debating-club" },
+      { label: "Science Club", href: "/bliss-club/science-club" },
+      { label: "Art Club", href: "/bliss-club/art-club" },
+      { label: "Cultural Club", href: "/bliss-club/cultural-club" },
+      { label: "Sports Club", href: "/bliss-club/sports-club" },
+      { label: "ICT Club", href: "/bliss-club/ict-club" },
     ],
   },
   {
