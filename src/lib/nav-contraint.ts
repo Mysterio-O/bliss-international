@@ -55,11 +55,11 @@ export const navItems: NavNode[] = [
     children: [
       {
         label: "Academic Calendar",
-        href: "#academic-calendar",
-        children: [
-          { label: "Satkhira Campus", href: "#academic-calendar-satkhira" },
-          { label: "Debhata Campus", href: "#academic-calendar-debhata" },
-        ],
+        href: "/academic-calendar",
+        // children: [
+        //   { label: "Satkhira Campus", href: "#academic-calendar-satkhira" },
+        //   { label: "Debhata Campus", href: "#academic-calendar-debhata" },
+        // ],
       },
       { label: "Curriculum", href: "#curriculum" },
       { label: "Teaching Medium", href: "#teaching-medium" },

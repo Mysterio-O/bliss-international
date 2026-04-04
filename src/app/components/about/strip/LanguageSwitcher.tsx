@@ -22,7 +22,7 @@ const languages: LanguageOption[] = [
 
 export default function LanguageSwitcher({ language, setLanguage }: LanguageSwitcherProps) {
     return (
-        <div className="flex items-center gap-1 bg-[var(--muted)] rounded-full p-1 border border-[var(--border)]">
+        <div className="flex items-center gap-1 bg-[var(--muted)] rounded-full p-1 border border-[var(--border)] max-w-[250px]">
             {languages.map((lang) => (
                 <button
                     key={lang.code}
