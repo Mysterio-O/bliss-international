@@ -81,10 +81,10 @@ export const navItems: NavNode[] = [
   },
   {
     label: "Results",
-    href: "#results",
+    href: "/results",
     children: [
-      { label: "Satkhira Campus", href: "#results-satkhira" },
-      { label: "Debhata Campus", href: "#results-debhata" },
+      { label: "Academic Result", href: "/results" },
+      // { label: "Debhata Campus", href: "#results-debhata" },
     ],
   },
   {
@@ -93,37 +93,37 @@ export const navItems: NavNode[] = [
     children: [
       {
         label: "Student's Activities",
-        href: "#students-activities",
-        children: [
-          { label: "Satkhira Campus", href: "#students-activities-satkhira" },
-          { label: "Debhata Campus", href: "#students-activities-debhata" },
-        ],
+        href: "/student-affairs/activities",
+        // children: [
+        //   { label: "Satkhira Campus", href: "#students-activities-satkhira" },
+        //   { label: "Debhata Campus", href: "#students-activities-debhata" },
+        // ],
       },
       {
         label: "BIA Publication",
-        href: "#bia-publication",
-        children: [
-          { label: "Satkhira Campus", href: "#bia-publication-satkhira" },
-          { label: "Debhata Campus", href: "#bia-publication-debhata" },
-        ],
+        href: "/student-affairs/publications",
+        // children: [
+        //   { label: "Satkhira Campus", href: "#bia-publication-satkhira" },
+        //   { label: "Debhata Campus", href: "#bia-publication-debhata" },
+        // ],
       },
       {
         label: "Student Verification",
-        href: "#student-verification",
-        children: [
-          { label: "Satkhira Campus", href: "#verification-satkhira" },
-          { label: "Debhata Campus", href: "#verification-debhata" },
-        ],
+        href: "/student-affairs/verification",
+        // children: [
+        //   { label: "Satkhira Campus", href: "#verification-satkhira" },
+        //   { label: "Debhata Campus", href: "#verification-debhata" },
+        // ],
       },
-      { label: "BIA E-library", href: "#bia-e-library" },
+      { label: "BIA E-library", href: "/student-affairs/e-library" },
     ],
   },
   {
     label: "Media Gallery",
     href: "#media-gallery",
     children: [
-      { label: "Photo Gallery", href: "#photo-gallery" },
-      { label: "Video Gallery", href: "#video-gallery" },
+      { label: "Our Gallery", href: "/media-gallery" },
+      // { label: "Video Gallery", href: "#video-gallery" },
     ],
   },
   {
@@ -140,9 +140,9 @@ export const navItems: NavNode[] = [
     label: "Contact",
     href: "#contact",
     children: [
-      { label: "Satkhira Campus", href: "#contact-satkhira" },
-      { label: "Debhata Campus", href: "#contact-debhata" },
-      { label: "Career", href: "#career" },
+      { label: "Contact Us", href: "/contact" },
+      // { label: "Debhata Campus", href: "#contact-debhata" },
+      { label: "Career", href: "/career" },
     ],
   },
 ];
