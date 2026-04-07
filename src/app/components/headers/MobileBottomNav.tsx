@@ -312,14 +312,14 @@ export default function MobileBottomNav() {
               </div>
             </div>
             <div className="relative space-y-1">
-              <span
+              {/* <span
                 className={cn(
                   "flex items-center rounded-lg px-3 py-2 text-xs font-medium transition-colors",
                   isItemActive(panel.item.href) ? "bg-card text-foreground" : "text-foreground/85 hover:bg-card/70"
                 )}
               >
                 {panel.item.label} Overview
-              </span>
+              </span> */}
               {panel.item.node.children?.length ? <div className="space-y-1">{renderSubtree(panel.item.node.children)}</div> : null}
             </div>
           </div>
