@@ -8,7 +8,7 @@ import { Home, ArrowLeft, BookOpen, Search } from "lucide-react";
 /* ── Quick links to help the user navigate ── */
 const QUICK_LINKS = [
     { label: "Home", href: "/", icon: Home },
-    { label: "Admission", href: "/admission", icon: BookOpen },
+    { label: "Admission", href: "/admission-procedure", icon: BookOpen },
     { label: "Contact Us", href: "/contact", icon: Search },
 ];
 
